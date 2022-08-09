@@ -10,6 +10,7 @@
 		FB4802912878DA0B0068D9AF /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4802902878DA0B0068D9AF /* HapticsManager.swift */; };
 		FB85B4C028A2943A00E3E5C9 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85B4BF28A2943A00E3E5C9 /* PersistenceManager.swift */; };
 		FB85B4C228A2945500E3E5C9 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85B4C128A2945500E3E5C9 /* APICaller.swift */; };
+		FB85B4C428A2D09A00E3E5C9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85B4C328A2D09A00E3E5C9 /* Extensions.swift */; };
 		FB8CBA582878A44B003D6C31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CBA572878A44B003D6C31 /* AppDelegate.swift */; };
 		FB8CBA5A2878A44B003D6C31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CBA592878A44B003D6C31 /* SceneDelegate.swift */; };
 		FB8CBA5C2878A44B003D6C31 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8CBA5B2878A44B003D6C31 /* WatchListViewController.swift */; };
@@ -24,6 +25,7 @@
 		FB4802902878DA0B0068D9AF /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		FB85B4BF28A2943A00E3E5C9 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		FB85B4C128A2945500E3E5C9 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		FB85B4C328A2D09A00E3E5C9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FB8CBA542878A44B003D6C31 /* Stocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8CBA572878A44B003D6C31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB8CBA592878A44B003D6C31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				FB8CBA602878A450003D6C31 /* Assets.xcassets */,
 				FB8CBA572878A44B003D6C31 /* AppDelegate.swift */,
 				FB8CBA592878A44B003D6C31 /* SceneDelegate.swift */,
+				FB85B4C328A2D09A00E3E5C9 /* Extensions.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				FB8CBA732878A63C003D6C31 /* SearchResultsViewViewController.swift in Sources */,
 				FB8CBA5C2878A44B003D6C31 /* WatchListViewController.swift in Sources */,
 				FB85B4C028A2943A00E3E5C9 /* PersistenceManager.swift in Sources */,
+				FB85B4C428A2D09A00E3E5C9 /* Extensions.swift in Sources */,
 				FB4802912878DA0B0068D9AF /* HapticsManager.swift in Sources */,
 				FB8CBA712878A614003D6C31 /* TopStoriesNewsViewController.swift in Sources */,
 				FB8CBA582878A44B003D6C31 /* AppDelegate.swift in Sources */,
