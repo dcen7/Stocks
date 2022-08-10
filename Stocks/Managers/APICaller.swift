@@ -11,14 +11,25 @@ final class APICaller {
     static let shared = APICaller()
     
     private struct Constants {
-            static let apiKey = ""
-            static let sandboxApiKey = ""
-            static let baseUrl = ""
+            static let apiKey = "cbpvbk2ad3i9b8tf7ccg"
+            static let sandboxApiKey = "sandbox_cbpsnr2ad3i9b8tf5tug"
+            static let baseUrl = "https://finnhub.io/api/v1/"
+        
     }
     
     private init() { }
     
     // MARK: - Public
+    
+    public func search(query: String, completion: @escaping (Result<SearchResponse, Error>) -> Void) {
+        guard let safeQuery = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return
+        }
+        
+        request(url: url(for: .search, queryparams: ["q": safeQuery]),
+                expecting: SearchResponse.self,
+                completion: completion)
+    }
     
     // get stock info
     
@@ -35,9 +46,26 @@ final class APICaller {
         case noDataReturned
     }
     
-    private func url(for endpoint: Endpoint,
-                     queryparams: [String: String] = [:]) -> URL? {
-        return nil
+    private func url(for endpoint: Endpoint, queryparams: [String: String] = [:]) -> URL? {
+        // ?q=apple&token=cbpsnr2ad3i9b8tf5tu0
+        var urlString = Constants.baseUrl + endpoint.rawValue
+        
+        var queryItems = [URLQueryItem]()
+        
+        // add any parameter
+        for (name, value) in queryparams {
+            queryItems.append(.init(name: name, value: value))
+        }
+        
+        // add token
+        queryItems.append(.init(name: "token", value: Constants.apiKey))
+        
+        // convert query items to suffix string
+        let queryString = queryItems.map {  "\($0.name)=\($0.value ?? "")"}.joined(separator: "&")
+        
+        urlString += "?" + queryString
+        print(urlString)
+        return URL(string: urlString)
     }
     
     private func request<T: Codable>(url: URL?, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
