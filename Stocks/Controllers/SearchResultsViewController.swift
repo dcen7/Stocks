@@ -7,13 +7,22 @@
 
 import UIKit
 
-class SearchResultsViewController: UIViewController {
+protocol SearchResultsViewControllerDelegate: AnyObject {
+    func searchResultsViewControllerDidSelect(searchResult: String)
+}
 
+class SearchResultsViewController: UIViewController {
+    
+    weak var delegate: SearchResultsViewControllerDelegate?
+    
+    private var results: [String] = []
+    
     private var tableView: UITableView = {
        var table = UITableView()
         table.register(SearchResultTableViewCell.self, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
         return table
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -31,6 +40,10 @@ class SearchResultsViewController: UIViewController {
         tableView.dataSource = self
     }
    
+    public func update(with results: [String]) {
+        self.results = results
+        tableView.reloadData()
+    }
 }
 
 extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -45,7 +58,10 @@ extension SearchResultsViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.searchResultsViewControllerDidSelect(searchResult: "AAPL")
+    }
     
     
     
