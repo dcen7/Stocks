@@ -17,9 +17,11 @@ class WatchListViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupSearchController()
         setupTitleView()
+        
     }
     
     // MARK: - Private
+   
     
     private func setupSearchController() {
         let resultVC = SearchResultsViewController()
