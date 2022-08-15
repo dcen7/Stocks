@@ -8,16 +8,7 @@
 import UIKit
 
 class NewsViewController: UIViewController {
-
-    var tableView: UITableView = {
-        let table = UITableView()
-        table.backgroundColor = .clear
-        
-        return table
-    }()
-    
-    private let type: Type
-    
+   
     enum `Type` {
         case topStories
         case company(symbol: String)
@@ -31,6 +22,22 @@ class NewsViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - Properties
+    
+    private var stories = [String]()
+    
+    private let type: Type
+    
+    var tableView: UITableView = {
+        let table = UITableView()
+        table.register(NewsHeaderView.self, forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
+        table.backgroundColor = .clear
+        
+        return table
+    }()
+    
+   
     // MARK: - Init
     init(type: Type) {
         self.type = type
@@ -73,7 +80,7 @@ class NewsViewController: UIViewController {
 
 extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,7 +88,11 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return nil
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: NewsHeaderView.identifier) as? NewsHeaderView else {
+            return nil
+        }
+        header.configure(with: .init(title: self.type.title, shouldShowAddButton: false))
+        return header
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,7 +100,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+        return NewsHeaderView.preferredHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
