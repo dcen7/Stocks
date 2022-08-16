@@ -4,7 +4,7 @@
 //
 //  Created by Mehmet Deniz Cengiz on 7/8/22.
 //
-
+import SafariServices
 import UIKit
 
 class NewsViewController: UIViewController {
@@ -85,6 +85,8 @@ class NewsViewController: UIViewController {
     }
     
     private func open(url: URL) {
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
         
     }
 }
@@ -122,6 +124,19 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        // open new story
+        let story = stories[indexPath.row]
+        guard let url = URL(string: story.url) else {
+            presentFailedToOpenAlert()
+            return
+        }
+        
+        open(url: url)
+    }
+    
+    private func presentFailedToOpenAlert() {
+        let alert = UIAlertController(title: "Unable to Open", message: "We were unable to open the article", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        present(alert, animated: true)
     }
 }
