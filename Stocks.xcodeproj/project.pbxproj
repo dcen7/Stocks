@@ -25,6 +25,7 @@
 		FB9AD7ED28AA701E00DE9100 /* NewsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9AD7EC28AA701E00DE9100 /* NewsHeaderView.swift */; };
 		FB9AD7F128AABEC400DE9100 /* NewsStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9AD7F028AABEC400DE9100 /* NewsStory.swift */; };
 		FB9AD7F328AAC9CA00DE9100 /* NewsStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9AD7F228AAC9CA00DE9100 /* NewsStoryTableViewCell.swift */; };
+		FB9AD80828AD936C00DE9100 /* MarketDataResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9AD80728AD936C00DE9100 /* MarketDataResponse.swift */; };
 		FBFB03A728A44CF6006A87B6 /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFB03A628A44CF6006A87B6 /* PanelViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		FB9AD7EC28AA701E00DE9100 /* NewsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeaderView.swift; sourceTree = "<group>"; };
 		FB9AD7F028AABEC400DE9100 /* NewsStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStory.swift; sourceTree = "<group>"; };
 		FB9AD7F228AAC9CA00DE9100 /* NewsStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStoryTableViewCell.swift; sourceTree = "<group>"; };
+		FB9AD80728AD936C00DE9100 /* MarketDataResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataResponse.swift; sourceTree = "<group>"; };
 		FBFB03A628A44CF6006A87B6 /* PanelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 			children = (
 				FB85B4C728A4094A00E3E5C9 /* SearchResponse.swift */,
 				FB9AD7F028AABEC400DE9100 /* NewsStory.swift */,
+				FB9AD80728AD936C00DE9100 /* MarketDataResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				FB9AD7F128AABEC400DE9100 /* NewsStory.swift in Sources */,
 				FB8CBA582878A44B003D6C31 /* AppDelegate.swift in Sources */,
 				FBFB03A728A44CF6006A87B6 /* PanelViewController.swift in Sources */,
+				FB9AD80828AD936C00DE9100 /* MarketDataResponse.swift in Sources */,
 				FB8CBA5A2878A44B003D6C31 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
